@@ -39,6 +39,4 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('dev', ['sass', 'watch']);
-};/**
- * Created by John on 2016-01-19.
- */
+};
