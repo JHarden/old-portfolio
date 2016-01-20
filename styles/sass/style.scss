@@ -224,7 +224,7 @@ section{
   opacity: 0.5;
   transition: opacity, 1s, ease-in;
   img{
-    max-width: 300px;
+    max-width: 30%;
     height: auto;
     padding: 1rem;
     outline: 1px solid #ebebeb;
@@ -253,8 +253,9 @@ section{
 }
 
 article.about-me{
-  min-height: 420px;
+  //min-height: 420px;
   width: 100%;
+  overflow: hidden;
 }
 //fade effects
 

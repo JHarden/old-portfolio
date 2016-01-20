@@ -168,7 +168,7 @@ section a {
   opacity: 0.5;
   transition: opacity, 1s, ease-in; }
   .about-me-img img {
-    max-width: 300px;
+    max-width: 30%;
     height: auto;
     padding: 1rem;
     outline: 1px solid #ebebeb; }
@@ -192,8 +192,8 @@ section a {
     transition: opacity, 2s, ease-in; }
 
 article.about-me {
-  min-height: 420px;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 section.hero, section.work {
   opacity: 1;
