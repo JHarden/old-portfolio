@@ -1,6 +1,271 @@
 
+$medium-desktop: 1366px;
+$font-family-primary: 'Roboto Slab', serif;
+$font-family-secondary: 'Open Sans', sans-serif;
+
+//grid
+.row{
+  clear: both;
+  width: 100%;
+}
+.grid-75{
+  width: 75%;
+  float: left;
+}
+.grid-25{
+  width: 25%;
+  float: left;
+}
+
+html{
+  font-size: 100%;
+  font-family: $font-family-primary;
+}
+body{
+  margin: 0;
+}
+
 header{
   h1{
-    font-family: 'Amatic SC', cursive;
+    color:#fff;
+    transition: color 0.75s ease-in;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 10rem;
+    z-index: 1;
+    opacity: 1;
+    font-weight: 100;
   }
+  +section .background-image{
+    transition: opacity 0.75s ease-in;
+    opacity: 0.45;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  &:hover{
+    h1{
+    transition: color 0.75s ease-in;
+    color: #333;
+    }
+    &+section .background-image{
+      transition: opacity 0.75s ease-in;
+      opacity: 0.2;
+
+    }
+  }
+}
+section{
+
+  article{
+    margin: 0;
+    position: relative;
+  }
+  header{
+    h2{
+      font-size: 5rem;
+      font-weight: 100;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  h3,h3 a{
+    font-size: 2.5rem;
+    font-weight: 100;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    &:hover{
+      background: #fff;
+      color: #ff0000;
+    }
+  }
+  h3 a{
+    &:hover{
+
+    }
+  }
+  p,li,a{
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.25rem;
+  }
+  ul{
+    padding: 1rem;
+  }
+  li{
+    margin: 1rem 0;
+    list-style: none;
+    position: relative;
+  }
+  a{
+    color: #545454;
+    text-decoration: none;
+    transition: color, 0.5s, ease-in;
+    &:hover{
+      color: #ff0000;
+      background-color: #ebebeb;
+      transition: color, 0.5s, ease-in;
+      transition: background, 0.5s, ease-in;
+
+    }
+  }
+}
+.company-wrap{
+  position: relative;
+}
+.flyout{
+  left: 300px;
+  color: #fff;
+  opacity: 0;
+  top: 0;
+  width: auto;
+  height: 50px;
+  transition: opacity, 1s, ease-in;
+  position: absolute;
+  background-color:#fff;
+  transition: background, 0.5s, ease-in;
+  .triangle{
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #1e90ff;
+    position: absolute;
+    top: 14.5px;
+    left: -10px;
+    opacity: 0;
+    transition: opacity, 1s, ease-in;
+  }
+  &.inline{
+    top: -10px;
+    .triangle{
+      border-right: 10px solid #22e656;
+    }
+  }
+  &.long{
+    left: 500px;
+  }
+  &.longer{
+    left: 550px;
+  }
+  &.longest{
+    left: 800px;
+  }
+  &.longestest{
+    left: 900px;
+  }
+  &.med{
+    left: 450px;
+  }
+  p{
+    padding: 0.3rem 0.5rem 0.5rem;
+  }
+
+}
+.company-title,.proj-descr{
+  margin-bottom: 1rem;
+ &:hover{
+   &+.flyout{
+     opacity: 1;
+     left: 400px;
+     transition: opacity, 1s, ease-in;
+     background-color: #1e90ff;
+     color: #fff;
+     transition: background, 1s, ease-in;
+
+     .triangle{
+       opacity: 1;
+       transition: opacity, 1s, ease-in;
+     }
+   }
+   &+.inline{
+     background-color: #22e656;
+     .triangle{
+       border-right: 10px solid #22e656;
+     }
+   }
+   &+.long{
+     left:  550px;
+   }
+   &+.longer{
+     left:  600px;
+   }
+   &+.longest{
+     left:  850px;
+   }
+   &+.longestest{
+     left:  950px;
+   }
+   &+.med{
+     left: 500px;
+   }
+   &+.short{
+     left:  200px;
+   }
+ }
+}
+.proj-descr{
+  &:hover{
+    &+.flyout{
+      //top: 10px;
+    }
+  }
+}
+
+.about-me-img{
+  text-align: center;
+  img{
+    max-width: 300px;
+    height: auto;
+    padding: 1rem;
+    outline: 1px solid #ebebeb;
+    
+  }
+}
+
+article.about-me{
+  min-height: 420px;
+  width: 100%;
+}
+//fade effects
+
+section.hero, section.work{
+  opacity: 1;
+  transition: opacity, 1s, ease-in;
+  &.inactive{
+    opacity: 0.1;
+    transition: opacity, 1s, ease-in;
+    background-color: #333;
+    transition: background-color, 1s, ease-in;
+    filter: grayscale(100%);
+  }
+}
+
+section.work{
+  &.inactive{
+    opacity: 0.5;
+    background-color: rgba(51, 51, 51, 0.35);
+    header{
+      h2{
+        color: rgba(51, 51, 51, 0.5);
+      }
+    }
+  }
+}
+
+
+@media (max-width:$medium-desktop){
+
+  header{
+    h1{
+      font-size: 6rem;
+      padding-top: 4rem;
+    }
+  }
+
 }

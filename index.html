@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>John Harden - Portfolio</title>
     <link rel="stylesheet" href="styles/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <header>
     <h1>John Harden</h1>
 </header>
-<section>
+<section class="hero" id="hero_banner">
     <picture class="background-image">
         <!-- Add Fallback for IE9 -->
         <!--[if IE 9]><video style="display: none;"><![endif]-->
@@ -21,11 +22,157 @@
         <!-- Add <img> fallback -->
         <img src="assets/hero_tree.jpg" srcset="assets/hero_tree.jpg" alt="Hero Tree">
     </picture>
-
-    <div class="mask">
-
-    </div>
 </section>
+<section class="about" id="about_me">
+    <header>
+        <h2>About Me</h2>
+    </header>
 
+    <article class="about-me">
+        <div class="grid-25 about-me-img">
+            <img src="assets/john.jpg" aria-label="picutre of me :D">
+        </div>
+        <div class="grid-75">
+            <p>
+               Hi, I'm John. I live in Vancouver and work as a web developer at PNI Digital Media. I've been in Vancouver for almost 2 years and I love it here.
+               I used to work for Central 1 as a Software Specialist 2 and I'm originally from Ireland, where I worked as a Java Developer for 3 years. I'm much more
+               interested in front-end development and design though, and I'm always looking to learn the latest tech and trends in the industry.
+            </p>
+            <p>
+               In my current position I make use of a lot of cool technologies like AngularJS, SASS, PostCSS, jQuery and plain ol' javaScript
+               with grunt task runner and git. All on a .net platform. I tend to use WebStorm as my IDE of choice, with Visual Studio for any back end changes.
+            </p>
+        </div>
+    </article>
+
+</section>
+<section class="work" id="my_work">
+    <header>
+        <h2>My Work</h2>
+    </header>
+    <article>
+        <div class="company-wrap">
+            <h3 class="company-title"><a href="http://pnimedia.com" target="_blank">PNI Digital Media</a></h3>
+            <div class="flyout">
+                <div>
+                <p>pnimedia.com</p>
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+            <p>
+                <ul>
+                    <li ><a class="proj-descr" href="http://design.staples.com" aria-label="staples copy & print link" target="_blank" >Redesign of Staples US copy & print site</a>
+                        <div class="flyout inline long">
+                            <div>
+                                <p>design.staples.com</p>
+                            </div>
+                            <div class="triangle">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a class="proj-descr" href="http://photo.samsclub.com/" aria-label="sams club photo link" target="_blank">Sam's Club responsive implementation</a>
+                        <div class="flyout inline long">
+                            <div>
+                                <p>photo.samsclub.com</p>
+                            </div>
+                            <div class="triangle">
+                            </div>
+                        </div>
+                    </li>
+                    <li><a class="proj-descr" href="http://www.costcophotocenter.com/" aria-label="costco photo center link" target="_blank">Costco PhotoCenter responsive implementation</a>
+                        <div class="flyout inline longer">
+                            <div>
+                                <p>costcophotocenter.com</p>
+                            </div>
+                            <div class="triangle">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="company-wrap">
+            <h3 class="company-title"><a href="http://central1.com" target="_blank">Central 1</a></h3>
+            <div class="flyout short">
+                <div>
+                    <p>central1.com</p>
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+                <ul>
+                    <li><a class="proj-descr" href="https://play.google.com/store/apps/details?id=com.vancity.mobileapp" aria-label="vancity mobile app" target="_blank">Configuration of many mobile apps for clients such as vancity</a>
+                        <div class="flyout inline longest">
+                            <div>
+                                <p>google play store link</p>
+                            </div>
+                            <div class="triangle">
+                            </div>
+                        </div>
+                    </li>
+                    <li><a class="proj-descr" href="https://www.central1.com/digital-payments/direct-banking-solutions" aria-label="member direct link" target="_blank">Implementation of MemberDirect services on web/apps for member credit unions</a>
+                        <div class="flyout inline longestest">
+                            <div>
+                                <p>MemberDirect info</p>
+                            </div>
+                            <div class="triangle">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        <div class="company-wrap">
+            <h3 class="company-title"><a href="http://pramerica.ie" target="_blank">Pramerica Systems Ireland</a></h3>
+            <div class="flyout long">
+                <div>
+                    <p>pramerica.ie</p>
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+            <ul>
+                <li><a class="proj-descr" href="http://lifeinsurance.prudential.com" aria-label="Prudential ILI" target="_blank">Individual Life Insurance consumer site</a>
+                    <div class="flyout inline med">
+                        <div>
+                            <p>lifeinsurance.prudential.com</p>
+                        </div>
+                        <div class="triangle">
+                        </div>
+                    </div>
+                </li>
+                <li><a class="proj-descr" href="http://research.prudential.com/view/page/rp/310" aria-label="Prudential Research" target="_blank">Prudential's Research & Perspectives site</a>
+                    <div class="flyout inline med">
+                        <div>
+                            <p>research.prudential.com</p>
+                        </div>
+                        <div class="triangle">
+                        </div>
+                    </div>
+                </li>
+                <li><a class="proj-descr" href="http://www.pramerica.pl/view/page/poppublic/265" aria-label="Pramerica of Poland" target="_blank">Pramerica of Poland</a>
+                    <div class="flyout inline">
+                        <div>
+                            <p>pramerica.pl</p>
+                        </div>
+                        <div class="triangle">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<section>
+    <header>
+        <h2>My Skills</h2>
+    </header>
+    <article>
+
+
+    </article>
+</section>
+<script src="scripts/scripts.js"></script>
 </body>
 </html>
