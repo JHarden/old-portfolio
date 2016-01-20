@@ -25,14 +25,14 @@
 </section>
 <section class="about" id="about_me">
     <header>
-        <h2>About Me</h2>
+        <h2 id="about_me_title" class="title-inactive">About Me</h2>
     </header>
 
     <article class="about-me">
-        <div class="grid-25 about-me-img">
+        <div class="grid-25 about-me-img" id="my_photo">
             <img src="assets/john.jpg" aria-label="picutre of me :D">
         </div>
-        <div class="grid-75">
+        <div class="about-me-blurb grid-75" id="my_blurb">
             <p>
                Hi, I'm John. I live in Vancouver and work as a web developer at PNI Digital Media. I've been in Vancouver for almost 2 years and I love it here.
                I used to work for Central 1 as a Software Specialist 2 and I'm originally from Ireland, where I worked as a Java Developer for 3 years. I'm much more
@@ -41,6 +41,9 @@
             <p>
                In my current position I make use of a lot of cool technologies like AngularJS, SASS, PostCSS, jQuery and plain ol' javaScript
                with grunt task runner and git. All on a .net platform. I tend to use WebStorm as my IDE of choice, with Visual Studio for any back end changes.
+            </p>
+            <p>
+                I enjoy hiking, walking and travelling, skiing and playing board games, the occasional social drink ;) and exploring this beautiful country.
             </p>
         </div>
     </article>
@@ -164,13 +167,21 @@
         </div>
     </article>
 </section>
-<section>
+<section class="skills" id="my_skills">
     <header>
         <h2>My Skills</h2>
     </header>
     <article>
-
-
+        <p>Skills include</p>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>javaScript</li>
+            <li>jQuery</li>
+            <li>react</li>
+            <li>AngularJS</li>
+            <li>Java</li>
+        </ul>
     </article>
 </section>
 <script src="scripts/scripts.js"></script>

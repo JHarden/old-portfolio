@@ -64,6 +64,9 @@ section h3, section h3 a {
     background: #fff;
     color: #ff0000; }
 
+section.inactive:hover {
+  background: none; }
+
 section p, section li, section a {
   margin-top: 0;
   font-size: 1.5rem;
@@ -89,6 +92,7 @@ section a {
     transition: background, 0.5s, ease-in; }
 
 .company-wrap {
+  margin-left: 5rem;
   position: relative; }
 
 .flyout {
@@ -160,12 +164,32 @@ section a {
     left: 200px; }
 
 .about-me-img {
-  text-align: center; }
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity, 1s, ease-in; }
   .about-me-img img {
     max-width: 300px;
     height: auto;
     padding: 1rem;
     outline: 1px solid #ebebeb; }
+  .about-me-img.active {
+    opacity: 1;
+    transition: opacity, 1s, ease-in; }
+
+.title-active {
+  opacity: 1;
+  transition: opacity, 2s, ease-in; }
+
+.title-inactive {
+  opacity: 0.2;
+  transition: opacity, 2s, ease-in; }
+
+.about-me-blurb {
+  opacity: 0.2;
+  transition: opacity, 2s, ease-in; }
+  .about-me-blurb.active {
+    opacity: 1;
+    transition: opacity, 2s, ease-in; }
 
 article.about-me {
   min-height: 420px;
