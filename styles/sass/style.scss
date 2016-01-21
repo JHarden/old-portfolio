@@ -7,6 +7,7 @@ $font-family-secondary: 'Open Sans', sans-serif;
 .row{
   clear: both;
   width: 100%;
+  position: relative;
 }
 .grid-75{
   width: 75%;
@@ -14,6 +15,10 @@ $font-family-secondary: 'Open Sans', sans-serif;
 }
 .grid-25{
   width: 25%;
+  float: left;
+}
+.grid-50{
+  width: 50%;
   float: left;
 }
 
@@ -27,7 +32,7 @@ body{
 
 header{
   h1{
-    color:#fff;
+    color:#333;
     transition: color 0.75s ease-in;
     position: absolute;
     width: 100%;
@@ -47,18 +52,20 @@ header{
   }
   &:hover{
     h1{
-    transition: color 0.75s ease-in;
-    color: #333;
+      transition: color 0.75s ease-in;
+      color: #fff;
+      opacity: 0.5;
+      transition: opacity 0.75s ease-in;
     }
     &+section .background-image{
       transition: opacity 0.75s ease-in;
-      opacity: 0.2;
+      opacity: 1;
 
     }
   }
 }
 section{
-
+  border-top: 1px solid #ebebeb;
   article{
     margin: 0;
     position: relative;
@@ -119,6 +126,12 @@ section{
 .company-wrap{
   margin-left: 5rem;
   position: relative;
+  //width: 50%;
+  //float: left;
+  //margin: 0;
+  &.bottom-wrap{
+    //width: 100%;
+  }
 }
 .flyout{
   left: 300px;
@@ -167,8 +180,8 @@ section{
   p{
     padding: 0.3rem 0.5rem 0.5rem;
   }
-
 }
+
 .company-title,.proj-descr{
   margin-bottom: 1rem;
  &:hover{
@@ -272,6 +285,7 @@ section.hero, section.work{
 }
 
 section.work{
+  position: relative;
   &.inactive{
     opacity: 0.5;
     background-color: rgba(51, 51, 51, 0.35);
@@ -283,7 +297,82 @@ section.work{
   }
 }
 
+section.demos{
+  h3{
+    text-align: center;
+    &:hover{
+      color: #333;
+    }
+  }
+  h4{
+    font-weight: 300;
+    margin-left: 2rem;
+    font-size: 1.75rem;
+  }
+  p{
+    margin-left: 3rem;
+    margin-bottom: 0;
+  }
+  .demo-blurb{
 
+      .border-inner{
+        margin: 2rem;
+        transition: background-color, 0.5s, ease-in;
+      }
+    &.blue{
+       .border-inner{
+         border: 2px solid rgba(0, 0, 255, 0.2);
+         &:hover{
+           transition: background-color, 0.5s, ease-in;
+           background-color: rgba(0, 0, 255, 0.2);
+         }
+       }
+    }
+    &.red{
+      .border-inner{
+        border: 2px solid rgba(255, 0, 0, 0.2);
+        &:hover{
+          transition: background-color, 0.5s, ease-in;
+          background-color: rgba(255, 0, 0, 0.2);
+        }
+      }
+    }
+    &.green{
+      .border-inner{
+        border: 2px solid rgba(185, 9, 243, 0.2);
+        &:hover{
+          transition: background-color, 0.5s, ease-in;
+          background-color: rgba(185, 9, 243, 0.2);
+        }
+      }
+    }
+    p.link{
+      margin: 2rem 3rem;
+    }
+    a{
+      color: #ff0000;
+      font-weight: 400;
+      &:hover{
+        color: #fff;
+        background: none;
+      }
+    }
+    p.link.github{
+      a{
+        color: #333;
+        font-weight: 400;
+        &:hover{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+img.github-link {
+  position: relative;
+  padding-right: 0.5rem;
+  top: 0.4rem;
+}
 @media (max-width:$medium-desktop){
 
   header{
