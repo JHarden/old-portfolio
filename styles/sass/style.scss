@@ -313,36 +313,89 @@ section.demos{
     margin-left: 3rem;
     margin-bottom: 0;
   }
-  .demo-blurb{
 
+  .demo-blurb{
+    width: 50%;
+    float: left;
       .border-inner{
         margin: 2rem;
         transition: background-color, 0.5s, ease-in;
+        min-height: 450px;
+        display: block;
+        position: relative;
+        img.prev-image {
+          position: absolute;
+          opacity: 0.05;
+          right: 0;
+          bottom: 0;
+        }
+        
       }
     &.blue{
+
        .border-inner{
          border: 2px solid rgba(0, 0, 255, 0.2);
+
          &:hover{
            transition: background-color, 0.5s, ease-in;
-           background-color: rgba(0, 0, 255, 0.2);
+           background-color: rgba(0, 0, 255, 0.025);
          }
        }
+      p.link{
+        a{
+          color: rgba(0, 0, 255, 0.3);
+          font-weight: 400;
+          &:hover{
+            color: rgba(0, 0, 255, 0.5);
+            background-color: #fff;
+          }
+        }
+      }
     }
     &.red{
       .border-inner{
         border: 2px solid rgba(255, 0, 0, 0.2);
         &:hover{
           transition: background-color, 0.5s, ease-in;
-          background-color: rgba(255, 0, 0, 0.2);
+          background-color: rgba(255, 0, 0, 0.025);
         }
       }
+      p.link{
+        a{
+          color: rgba(255, 0, 0, 0.3);
+          font-weight: 400;
+          &:hover{
+            color: rgba(255, 0, 0, 0.5);
+            background-color: #fff;
+          }
+        }
+      }
+      img.prev-image{
+        right: 20px;
+        bottom: 20px;
+      }
     }
-    &.green{
+    &.purple{
       .border-inner{
         border: 2px solid rgba(185, 9, 243, 0.2);
         &:hover{
           transition: background-color, 0.5s, ease-in;
-          background-color: rgba(185, 9, 243, 0.2);
+          background-color: rgba(185, 9, 243, 0.025);
+        }
+        ul li{
+          margin-left: 4rem;
+          list-style: decimal;
+        }
+        .cta-links{
+          right: 0;
+          a{
+            border: none;
+            font-weight: 400;
+            &:hover{
+              color: rgba(185, 9, 243, 0.5);
+
+            }
+          }
         }
       }
     }
@@ -350,8 +403,10 @@ section.demos{
       margin: 2rem 3rem;
     }
     a{
-      color: #ff0000;
-      font-weight: 400;
+      border: 2px solid;
+      color: #333;
+      font-weight: 300;
+      padding: 0.5rem;
       &:hover{
         color: #fff;
         background: none;
@@ -361,12 +416,17 @@ section.demos{
       a{
         color: #333;
         font-weight: 400;
+        border: none;
         &:hover{
-          color: #fff;
+         background: none;
         }
       }
     }
   }
+}
+.cta-links {
+  position: absolute;
+  bottom: 0;
 }
 img.github-link {
   position: relative;
