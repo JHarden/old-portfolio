@@ -1,13 +1,20 @@
 
 $medium-desktop: 1366px;
+$small-desktop: 1024px;
+$tablet-portriat: 768px;
+
 $font-family-primary: 'Roboto Slab', serif;
 $font-family-secondary: 'Open Sans', sans-serif;
 
-//grid
+//Desktop and mobile grids
 .row{
   clear: both;
   width: 100%;
   position: relative;
+}
+.grid-100{
+  width: 100%;
+  float: left;
 }
 .grid-75{
   width: 75%;
@@ -21,6 +28,31 @@ $font-family-secondary: 'Open Sans', sans-serif;
   width: 50%;
   float: left;
 }
+
+@media(max-width: $tablet-portriat){
+
+  .grid-t-100{
+    width: 100%;
+    float: left;
+  }
+
+  .grid-t-75{
+    width: 75%;
+    float: left;
+  }
+  .grid-t-25{
+    width: 25%;
+    float: left;
+  }
+  .grid-t-50{
+    width: 50%;
+    float: left;
+  }
+
+
+}
+
+
 
 html{
   font-size: 100%;
@@ -315,8 +347,8 @@ section.demos{
   }
 
   .demo-blurb{
-    width: 50%;
-    float: left;
+    //width: 50%;
+    //float: left;
       .border-inner{
         margin: 2rem;
         transition: background-color, 0.5s, ease-in;
@@ -332,13 +364,12 @@ section.demos{
         
       }
     &.blue{
-
        .border-inner{
          border: 2px solid rgba(0, 0, 255, 0.2);
 
          &:hover{
            transition: background-color, 0.5s, ease-in;
-           background-color: rgba(0, 0, 255, 0.025);
+           background-color: rgba(0, 0, 255, 0.1);
          }
        }
       p.link{
@@ -357,7 +388,7 @@ section.demos{
         border: 2px solid rgba(255, 0, 0, 0.2);
         &:hover{
           transition: background-color, 0.5s, ease-in;
-          background-color: rgba(255, 0, 0, 0.025);
+          background-color: rgba(255, 0, 0, 0.1);
         }
       }
       p.link{
@@ -375,17 +406,42 @@ section.demos{
         bottom: 20px;
       }
     }
+    &.green{
+
+      .border-inner{
+        border: 2px solid rgba(24, 186, 21, 0.50);
+
+        &:hover{
+          transition: background-color, 0.5s, ease-in;
+          background-color: rgba(65, 255, 57, 0.1);
+        }
+      }
+      p.link{
+        a{
+          color: rgba(24, 186, 21, 0.50);
+          font-weight: 400;
+          &:hover{
+            color: rgba(24, 186, 21, 0.75);
+            background-color: #fff;
+          }
+        }
+      }
+    }
     &.purple{
       .border-inner{
         border: 2px solid rgba(185, 9, 243, 0.2);
         &:hover{
           transition: background-color, 0.5s, ease-in;
-          background-color: rgba(185, 9, 243, 0.025);
+          background-color: rgba(185, 9, 243, 0.1);
         }
-        ul li{
-          margin-left: 4rem;
-          list-style: decimal;
-        }
+        ul{
+          margin-top: 0;
+          padding: 0;
+          li{
+            margin-left: 4rem;
+            list-style: decimal;
+          }
+        } 
         .cta-links{
           right: 0;
           a{
@@ -398,7 +454,7 @@ section.demos{
           }
         }
       }
-    }
+    } 
     p.link{
       margin: 2rem 3rem;
     }
@@ -433,8 +489,14 @@ img.github-link {
   padding-right: 0.5rem;
   top: 0.4rem;
 }
+
+
 @media (max-width:$medium-desktop){
 
+  html{
+    font-size: 90%;
+  }
+  
   header{
     h1{
       font-size: 6rem;
@@ -442,4 +504,32 @@ img.github-link {
     }
   }
 
+  section.demos{
+
+    .demo-blurb.purple{
+
+      .border-inner ul li{
+        line-height: 1.5rem; 
+      }
+    } 
+  }   
+}
+
+@media (max-width: $small-desktop){
+
+  html{
+    font-size: 80%;
+  }
+
+}
+
+@media (max-width: $tablet-portriat){
+
+  section.demos{
+    .demo-blurb{
+      .border-inner{
+        min-height: 300px;
+      }      
+    }     
+  }   
 }
