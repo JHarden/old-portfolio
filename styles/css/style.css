@@ -38,7 +38,7 @@ html {
   font-family: "Roboto Slab", serif; }
 
 body {
-  margin: 0; }
+  margin: 4rem; }
 
 header h1 {
   color: #333;
@@ -110,6 +110,128 @@ section {
       background-color: #ebebeb;
       transition: color, 0.5s, ease-in;
       transition: background, 0.5s, ease-in; }
+
+section.tyloren {
+  border-top: none; }
+  section.tyloren .toggle {
+    top: 0;
+    left: 0;
+    height: 50px;
+    position: fixed;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    z-index: 2; }
+    section.tyloren .toggle input {
+      display: none; }
+    section.tyloren .toggle label.nav {
+      background-color: #fff;
+      display: block;
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+      text-align: center;
+      transition: font-size, 0.2s, ease-in; }
+      section.tyloren .toggle label.nav:hover {
+        transition: font-size, 0.2s, ease-in;
+        font-size: 1.5rem;
+        cursor: pointer; }
+  section.tyloren ul.tiles {
+    list-style: none;
+    padding: 0; }
+    section.tyloren ul.tiles li.name-tile {
+      background-color: #fff;
+      transition: all 0.2s ease-out;
+      text-align: center;
+      font-size: 2.5rem;
+      display: block;
+      border: 2px solid #666;
+      overflow: hidden;
+      /*
+      &:hover{
+        background-color: #ff0000;
+        cursor: pointer;
+        div.inner-tile{
+          transition: color 0.2s ease-in !important;
+          color: #fff;
+        }
+      }
+      */ }
+      section.tyloren ul.tiles li.name-tile div.inner-tile {
+        vertical-align: middle; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile p {
+          padding: 1rem; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile .letter {
+          transition: opacity 1s ease-in;
+          left: 50%;
+          margin-left: -1rem;
+          top: 50%;
+          margin-top: -1.5rem;
+          display: block;
+          position: absolute; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content {
+          max-height: 0;
+          opacity: 0; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content p {
+            margin-bottom: 0; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content.active {
+            animation: 1.5s m-fadein;
+            max-height: 500px;
+            opacity: 1; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content {
+          max-height: 0;
+          opacity: 0; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content p {
+            margin-bottom: 0; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content.active {
+            animation: 1.5s m-fadein;
+            max-height: 500px;
+            opacity: 1; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content.active ~ .letter {
+          opacity: 0; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content.active ~ .letter {
+          opacity: 0; }
+
+section.about {
+  opacity: 0;
+  max-height: 0;
+  position: relative;
+  top: 230px;
+  transition: all 0.75s ease-in; }
+  section.about.active {
+    opacity: 1;
+    max-height: 2000px;
+    left: 0px;
+    transition: all 0.4s ease-in; }
+
+@keyframes highlight {
+  0% {
+    background-color: #fff; }
+  25% {
+    color: #ebebeb; }
+  50% {
+    color: #fff;
+    background-color: rgba(120, 120, 120, 0.51); }
+  75% {
+    color: #ebebeb; }
+  100% {
+    background-color: #fff; } }
+
+@keyframes m-fadein {
+  0% {
+    opacity: 0;
+    max-height: 0; }
+  70% {
+    opacity: 0;
+    max-height: 0; }
+  80% {
+    opacity: 0.25;
+    max-height: 250px; }
+  90% {
+    opacity: 0.5;
+    max-height: 400px; }
+  100% {
+    opacity: 1;
+    max-height: 500px; } }
 
 .company-wrap {
   margin-left: 5rem;
@@ -340,6 +462,22 @@ section.demos .demo-blurb p.link.github a {
   section.demos .demo-blurb p.link.github a:hover {
     background: none; }
 
+section.demos .demo-inactive {
+  opacity: 0;
+  -webkit-transition: opacity 0.35s ease-in;
+  -moz-transition: opacity  0.35s ease-in;
+  -ms-transition: opacity  0.35s ease-in;
+  -o-transition: opacity  0.35s ease-in;
+  transition: opacity  0.35s ease-in; }
+
+section.demos .demo-active {
+  opacity: 1;
+  -webkit-transition: opacity 0.35s ease-in;
+  -moz-transition: opacity  0.35s ease-in;
+  -ms-transition: opacity  0.35s ease-in;
+  -o-transition: opacity  0.35s ease-in;
+  transition: opacity  0.35s ease-in; }
+
 .cta-links {
   position: absolute;
   bottom: 0; }
@@ -360,8 +498,12 @@ img.github-link {
 
 @media (max-width: 1024px) {
   html {
-    font-size: 80%; } }
+    font-size: 80%; }
+  section.work .flyout {
+    display: none; } }
 
 @media (max-width: 768px) {
   section.demos .demo-blurb .border-inner {
-    min-height: 300px; } }
+    min-height: 300px; }
+  section.about {
+    top: 150px; } }
