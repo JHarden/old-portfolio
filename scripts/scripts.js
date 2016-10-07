@@ -58,60 +58,59 @@
 //    }
 //});
 
-    var ty1 = new tyloren(document.getElementById('tyloren_list'),{
-    speed:40,
-    responsive:true,
-    responsive_config:{
-        2000:{
-            small:12,
-            medium:4,
-            large:3,
-            padding:30
+
+    var first = new Tyloren(document.getElementById('tyloren_list'),{
+        speed:40,
+        responsive:true,
+        width_height_ratio:1,
+        responsive_config:{
+            2000:{
+                small:[12,10],
+                medium:[4,10],
+                large:[3,20]
+            },
+            1024:{
+                small:[12,10],
+                medium:[3,10],
+                large:[2,10]
+            },
+            768:{
+                small:[6,10],
+                medium:[3,10],
+                large:[2,10]
+            },
+            414:{
+                small:[4,10],
+                medium:[1,10],
+                large:[2,20]
+            }
         },
-        1024:{
-            small:12,
-            medium:6,
-            large:4,
-            padding:10
+        singularity:true,
+        singularity_config:{
+            fade_others:true,
+            fade_active:false
         },
-        768:{
-            small:6,
-            medium:6,
-            large:4,
-            padding:10
+        xplode:false,
+        xplode_config:{
+            split:true
         },
-        414:{
-            small:6,
-            medium:4,
-            large:2,
-            padding:10
+        vacuum:false,
+        vacuum_config:{
+            stagger:25,
+            fade:true
+        },
+        glados:false,
+        glados_config:{
+            stagger:50
+        },
+        toggle_handlers:{
+            small:'small_size',
+            medium:'medium_size',
+            large:'large_size',
+            reset:'reset'
         }
-    },
-    singularity:true,
-    singularity_config:{
-        fade_others:true,
-        fade_active:false
-    },
-    xplode:false,
-    xplode_config:{
-        split:true
-    },
-    vacuum:false,
-    vacuum_config:{
-        stagger:25,
-        fade:true
-    },
-    glados:false,
-    glados_config:{
-        stagger:50,
-    },
-    toggle_handlers:{
-        small:'small_size',
-        medium:'medium_size',
-        large:'large_size',
-        reset:'reset'
-    }
     });
+
 
     function doTileChangeEffect(){
 
@@ -143,7 +142,6 @@
                 for(var i=0;i<m_list.length;i++){
                     m_list[i].classList.remove("active");
                     l_list[i].className = l_list[i].className + " active";
-
                 }
                 document.getElementById("about_us").classList.remove("active");
 

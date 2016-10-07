@@ -144,20 +144,11 @@ section.tyloren {
       text-align: center;
       font-size: 2.5rem;
       display: block;
-      border: 2px solid #666;
-      overflow: hidden;
-      /*
-      &:hover{
-        background-color: #ff0000;
-        cursor: pointer;
-        div.inner-tile{
-          transition: color 0.2s ease-in !important;
-          color: #fff;
-        }
-      }
-      */ }
+      border: 1px solid #ebebeb;
+      overflow: hidden; }
       section.tyloren ul.tiles li.name-tile div.inner-tile {
-        vertical-align: middle; }
+        vertical-align: middle;
+        height: 100%; }
         section.tyloren ul.tiles li.name-tile div.inner-tile p {
           padding: 1rem; }
         section.tyloren ul.tiles li.name-tile div.inner-tile .letter {
@@ -168,9 +159,31 @@ section.tyloren {
           margin-top: -1.5rem;
           display: block;
           position: absolute; }
+        section.tyloren ul.tiles li.name-tile div.inner-tile .inner-s-content {
+          width: 100%;
+          height: 100%;
+          position: relative; }
         section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
           max-height: 0;
           opacity: 0; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content h2 {
+            font-size: 2.5rem; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content .company-logo {
+            position: relative;
+            max-width: 70%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; }
+            section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content .company-logo img {
+              width: 100%;
+              height: auto;
+              position: relative;
+              top: 5%; }
           section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content p {
             margin-bottom: 0; }
           section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content.active {
@@ -186,6 +199,13 @@ section.tyloren {
             animation: 1.5s m-fadein;
             max-height: 500px;
             opacity: 1; }
+          section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content .photo-wrap img {
+            width: 100%;
+            height: auto;
+            transition: all 0.25s ease-in-out;
+            transform: scale(1.025); }
+            section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content .photo-wrap img:hover {
+              transform: scale(1); }
         section.tyloren ul.tiles li.name-tile div.inner-tile .inner-m-content.active ~ .letter {
           opacity: 0; }
         section.tyloren ul.tiles li.name-tile div.inner-tile .inner-l-content.active ~ .letter {
@@ -196,8 +216,10 @@ section.about {
   max-height: 0;
   position: relative;
   top: 230px;
-  transition: all 0.75s ease-in; }
+  transition: all 0.75s ease-in;
+  visibility: hidden; }
   section.about.active {
+    visibility: visible;
     opacity: 1;
     max-height: 2000px;
     left: 0px;
@@ -218,63 +240,19 @@ section.about {
 
 @keyframes m-fadein {
   0% {
-    opacity: 0;
-    max-height: 0; }
+    opacity: 0; }
   70% {
-    opacity: 0;
-    max-height: 0; }
+    opacity: 0; }
   80% {
-    opacity: 0.25;
-    max-height: 250px; }
+    opacity: 0.25; }
   90% {
-    opacity: 0.5;
-    max-height: 400px; }
+    opacity: 0.5; }
   100% {
-    opacity: 1;
-    max-height: 500px; } }
+    opacity: 1; } }
 
 .company-wrap {
   margin-left: 5rem;
   position: relative; }
-
-.flyout {
-  left: 300px;
-  color: #fff;
-  opacity: 0;
-  top: 0;
-  width: auto;
-  height: 50px;
-  transition: opacity, 1s, ease-in;
-  position: absolute;
-  background-color: #fff;
-  transition: background, 0.5s, ease-in; }
-  .flyout .triangle {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #1e90ff;
-    position: absolute;
-    top: 14.5px;
-    left: -10px;
-    opacity: 0;
-    transition: opacity, 1s, ease-in; }
-  .flyout.inline {
-    top: -10px; }
-    .flyout.inline .triangle {
-      border-right: 10px solid #22e656; }
-  .flyout.long {
-    left: 500px; }
-  .flyout.longer {
-    left: 550px; }
-  .flyout.longest {
-    left: 800px; }
-  .flyout.longestest {
-    left: 900px; }
-  .flyout.med {
-    left: 450px; }
-  .flyout p {
-    padding: 0.3rem 0.5rem 0.5rem; }
 
 .company-title, .proj-descr {
   margin-bottom: 1rem; }
@@ -507,3 +485,11 @@ img.github-link {
     min-height: 300px; }
   section.about {
     top: 35vw; } }
+
+@keyframes flip {
+  0% {
+    background-color: #fff; }
+  50% {
+    background-color: #000; }
+  100% {
+    background-color: #fff; } }

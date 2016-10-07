@@ -1,3 +1,4 @@
+@import 'helpers';
 
 $medium-desktop: 1366px;
 $small-desktop: 1024px;
@@ -5,7 +6,6 @@ $tablet-portriat: 768px;
 
 $font-family-primary: 'Roboto Slab', serif;
 $font-family-secondary: 'Open Sans', sans-serif;
-
 //Desktop and mobile grids
 .row{
   clear: both;
@@ -48,16 +48,13 @@ $font-family-secondary: 'Open Sans', sans-serif;
     width: 50%;
     float: left;
   }
-
-
 }
-
-
 
 html{
   font-size: 100%;
   font-family: $font-family-primary;
 }
+
 body{
   margin: 4rem;
 }
@@ -92,7 +89,6 @@ header{
     &+section .background-image{
       transition: opacity 0.75s ease-in;
       opacity: 1;
-
     }
   }
 }
@@ -194,15 +190,15 @@ section.tyloren{
       text-align: center;
       font-size: 2.5rem;
       display: block;
-      border: 2px solid #666;
+      border: 1px solid #ebebeb;
       overflow: hidden;
 
       div.inner-tile{
-
         p{
           padding: 1rem;
         }
         vertical-align: middle;
+        height: 100%;
         .letter{
           transition: opacity 1s ease-in;
           left: 50%;
@@ -212,7 +208,43 @@ section.tyloren{
           display: block;
           position: absolute;
         }
+        .inner-s-content {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          //animation: flip 1s ease-in infinite;
+          //&:hover{
+          //  transition: all 0.25s ease-in;
+          //  background-color: #1c75d5;
+          //  cursor: pointer;
+          //  span{
+          //    color: #FFF;
+          //  }
+          //}
+        }
         .inner-m-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          h2{
+            font-size: 2.5rem;
+          }
+          .company-logo {
+            position: relative;
+            max-width: 70%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            img{
+              width: 100%;
+              height: auto;
+              position: relative;
+              top: 5%;
+            }
+          }
+
           p{
             margin-bottom: 0;
           }
@@ -222,6 +254,9 @@ section.tyloren{
             animation: 1.5s m-fadein;
             max-height: 500px;
             opacity: 1;
+            &~.letter{
+
+            }
           }
         }
         .inner-l-content{
@@ -235,6 +270,17 @@ section.tyloren{
             max-height: 500px;
             opacity: 1;
           }
+          .photo-wrap{
+            img{
+              width: 100%;
+              height: auto;
+              transition: all 0.25s ease-in-out;
+              transform: scale(1.025);
+              &:hover{
+                transform: scale(1.0);
+              }
+            }
+          }
         }
         .inner-m-content.active ~ .letter{
         opacity: 0;
@@ -242,18 +288,7 @@ section.tyloren{
         .inner-l-content.active ~ .letter{
           opacity: 0;
         }
-       
       }
-      /*
-      &:hover{
-        background-color: #ff0000;
-        cursor: pointer;
-        div.inner-tile{
-          transition: color 0.2s ease-in !important;
-          color: #fff;
-        }
-      }
-      */
     }
   }
 }
@@ -264,7 +299,9 @@ section.about{
   position: relative;
   top: 230px;
   transition: all 0.75s ease-in ;
+  visibility: hidden;
   &.active{
+    visibility: visible;
     opacity: 1;
     max-height: 2000px;
     left: 0px;
@@ -274,8 +311,7 @@ section.about{
 
 
 @keyframes highlight {
-  
-  
+
   0%{    
     background-color: #fff;    
   }
@@ -296,84 +332,34 @@ section.about{
   100%{
     background-color: #fff;
   }
-  
-  
 }
 
 @keyframes m-fadein {
   0%{
     opacity: 0;
-    max-height: 0;
+    //max-height: 0;
   }
   70%{
     opacity: 0;
-    max-height: 0;
+    //max-height: 0;
   }
   80%{
     opacity: 0.25;
-    max-height: 250px;
+    //max-height: 250px;
   }
   90%{
     opacity: 0.5;
-    max-height: 400px;
+    //max-height: 400px;
   }
   100%{
     opacity: 1;
-    max-height: 500px;
+    //max-height: 500px;
   }
 }
 
 .company-wrap{
   margin-left: 5rem;
   position: relative;
-}
-.flyout{
-  left: 300px;
-  color: #fff;
-  opacity: 0;
-  top: 0;
-  width: auto;
-  height: 50px;
-  transition: opacity, 1s, ease-in;
-  position: absolute;
-  background-color:#fff;
-  transition: background, 0.5s, ease-in;
-  .triangle{
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #1e90ff;
-    position: absolute;
-    top: 14.5px;
-    left: -10px;
-    opacity: 0;
-    transition: opacity, 1s, ease-in;
-  }
-  &.inline{
-    top: -10px;
-    .triangle{
-      border-right: 10px solid #22e656;
-    }
-  }
-  &.long{
-    left: 500px;
-  }
-  &.longer{
-    left: 550px;
-  }
-  &.longest{
-    left: 800px;
-  }
-  &.longestest{
-    left: 900px;
-  }
-  &.med{
-    left: 450px;
-  }
-  p{
-    padding: 0.3rem 0.5rem 0.5rem;
-  }
 }
 
 .company-title,.proj-descr{
@@ -725,5 +711,17 @@ img.github-link {
   }
   section.about{
     top: 35vw;
+  }
+}
+
+@keyframes flip {
+  0%{
+    background-color: #fff;
+  }
+  50%{
+    background-color: #000;
+  }
+  100%{
+    background-color: #fff;
   }
 }
